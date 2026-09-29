@@ -1,0 +1,312 @@
+:root {
+    --bg-dark: #0a0a0a;
+    --panel-dark: #121110;
+    --panel-light: #1c1a18;
+    --red-deep: #8b1e1e;
+    --red-bright: #c0392b;
+    --gold: #c49a45;
+    --text-main: #f4efe6;
+    --text-muted: #9e958b;
+    --glow-shadow: 0 0 60px rgba(255, 255, 255, 0.08);
+    --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-jp: "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
+.Gsearch {
+    position: relative;
+    width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    color: var(--text-main);
+    font-family: var(--font-serif);
+    background: var(--bg-dark);
+}
+
+.Gsearch br {
+    display: none
+}
+
+.Gsearch-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px 32px 0;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.gseal {
+    display: inline-block;
+    background: var(--red-deep);
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    line-height: 1;
+}
+
+.grplabel {
+    color: var(--text-muted);
+    margin-top: 10px;
+    display: block;
+}
+
+/* ============================================================MAIN GRID: IMAGE + STATS============================================================ */
+.gin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: center;
+}
+
+.ginrp-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 0%, transparent 70%);
+}
+
+.ginrp-imageglow {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 3 / 4;
+    border-radius: 10% / 70%;
+    overflow: hidden;
+    box-shadow: 0 0 80px 10px rgba(255, 255, 255, 0.1), inset 0 0 40px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ginrp-imageglow img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- CHARACTER INFO SIDE --- */
+.gininfo {
+    padding: 40px 40px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.gver-jp {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    writing-mode: vertical-rl;
+    font-family: var(--font-jp);
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.Ginname {
+    margin: 0 0 8px;
+    font-size: 56px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #fff;
+    line-height: 1;
+}
+
+.Ginname span {
+    display: block;
+    font-family: var(--font-jp);
+    font-size: 20px;
+    letter-spacing: 0.4em;
+    color: var(--text-muted);
+    margin-top: 10px;
+}
+
+.Gintitle {
+    margin: 0 0 8px;
+    font-size: 25px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #fff;
+    line-height: 1;
+}
+
+.Gintitle span {
+    display: inline-block;
+    font-family: var(--font-jp);
+    font-size: 20px;
+    letter-spacing: 0.4em;
+    color: var(--text-muted);
+    margin-top: 10px;
+}
+
+.gin-quote {
+    margin: 24px 0 32px;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 320px;
+    border-left: 2px solid var(--red-deep);
+    padding-left: 16px;
+}
+
+/* --- STATS LIST --- */
+.gin-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 24px;
+    margin-top: auto;
+}
+
+.gin-item .label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.gin-item .value {
+    display: block;
+    font-size: 15px;
+    color: var(--text-main);
+    line-height: 1.3;
+}
+
+.gin-prose {
+    padding: 40px 32px;
+    background: var(--panel-dark);
+    max-height: 500px;
+    overflow-y: auto;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.gin-prose p {
+    font-size: 13px;
+    margin: 0 0 1.2em;
+}
+
+.gin-prose p:last-child {
+    margin-bottom: 0;
+}
+
+/* Prose styling helpers */
+.gin-prose .speech {
+    color: #e8b4b4;
+}
+
+.gin-prose .thought {
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+.gin-prose .action {
+    color: #d4cfc7;
+}
+
+/* Divider */
+.gin-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 32px 0;
+    color: var(--red-deep);
+    font-size: 14px;
+    letter-spacing: 0.5em;
+}
+
+.gin-divider::before,
+.gin-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--red-deep), transparent);
+}
+
+/* Custom Scrollbar */
+.gin-prose::-webkit-scrollbar {
+    width: 6px;
+}
+
+.gin-prose::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+.gin-prose::-webkit-scrollbar-thumb {
+    background: var(--red-deep);
+    border-radius: 99px;
+}
+
+.gin-prose {
+    scrollbar-width: thin;
+    scrollbar-color: var(--red-deep) var(--bg-dark);
+}
+
+/* ============================================================FOOTER============================================================ */
+.gin-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px;
+    background: var(--panel-light);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.gin-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.rp-tag {
+    padding: 4px 12px;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text-main);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+}
+
+/* The "OPEN CHARACTER FILE" button from the screenshot */
+.gin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 28px;
+    background: var(--red-deep);
+    color: #fff;
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.gin-btn:hover {
+    background: var(--red-bright);
+    transform: translateY(-1px);
+}
+
+.gin-btn::before,
+.gin-btn::after {
+    content: "✦";
+    font-size: 8px;
+    opacity: 0.7;
+}
