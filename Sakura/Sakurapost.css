@@ -1,0 +1,225 @@
+ :root {
+     --bg-dark: #0a0c10;
+     --bg-card: #11141a;
+     --pink-light: #f8c8dc;
+     --pink-glow: rgba(248, 200, 220, 0.4);
+     --pink-dim: rgba(248, 200, 220, 0.15);
+     --text-main: #d1d5db;
+     --text-bright: #ffffff;
+     --text-muted: #8b949e;
+     --font-serif: 'Cinzel', serif;
+     --font-body: 'Lora', serif;
+     --font-ui: 'Inter', sans-serif;
+ }
+
+ * {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+ }
+
+ .SakuraPost {
+     width: 100%;
+     max-width: 700px;
+     background-color: var(--bg-card);
+     border: 1px solid var(--pink-dim);
+     border-radius: 4px;
+     overflow: hidden;
+ }
+
+ .SakuraPost br {
+     display: none
+ }
+
+ /* --- HERO SECTION --- */
+ .Sakura-head {
+     position: relative;
+     height: 480px;
+     background-image: linear-gradient(to bottom, rgba(17, 20, 26, 0.2) 0%, rgba(17, 20, 26, 1) 95%), radial-gradient(circle at 50% 40%, rgba(248, 200, 220, 0.15) 0%, transparent 60%), url('https://i.ibb.co/TqKrjRDS/Posts.png');
+     background-size: cover;
+     background-position: center;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     padding: 30px;
+ }
+
+ .saku-toptag {
+     background-color: var(--pink-light);
+     color: #0a0c10;
+     font-size: 12px;
+     font-weight: 600;
+     padding: 4px 12px;
+     border-radius: 2px;
+     width: fit-content;
+     letter-spacing: 1px;
+     position: absolute;
+     top: 30px;
+     left: 30px;
+ }
+
+ .saku-vertical {
+     writing-mode: vertical-rl;
+     text-orientation: mixed;
+     color: var(--pink-light);
+     font-family: var(--font-serif);
+     font-size: 14px;
+     letter-spacing: 4px;
+     position: absolute;
+     top: 30px;
+     right: 30px;
+     padding-left: 15px;
+     border-left: 1px solid var(--pink-dim);
+ }
+
+ .Sakura-content {
+     margin-top: auto;
+     text-align: right;
+     padding-right: 20px;
+     position: relative;
+     z-index: 2;
+ }
+
+ .Sakura-title {
+     font-family: var(--font-serif);
+     font-size: 25px;
+     color: var(--text-bright);
+     text-shadow: 0 0 20px var(--pink-glow);
+     line-height: 1.1;
+     font-weight: 400;
+ }
+
+ .Sakura-title-jp {
+     font-family: var(--font-serif);
+     font-size: 18px;
+     color: var(--pink-light);
+     letter-spacing: 8px;
+     margin-top: 5px;
+     margin-bottom: 0px;
+     display: block;
+ }
+
+ .Sakura-quote {
+     font-family: var(--font-body) !important;
+     font-style: italic;
+     font-size: 14px !important;
+     color: var(--pink-light);
+     max-width: 320px;
+     margin-left: auto;
+     line-height: 1.5;
+     opacity: 0.8;
+ }
+
+ /* --- INFO GRID --- */
+ .saku-infgrid {
+     display: flex;
+     justify-content: center;
+     gap: 40px;
+     margin-top: 40px;
+     padding-top: 20px;
+     border-top: 1px solid var(--pink-dim);
+     width: 100%;
+ }
+
+ .saku-iitem {
+     text-align: center;
+ }
+
+ .Sakuinfo-label {
+     font-size: 10px;
+     color: var(--pink-light);
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     margin-bottom: 4px;
+     display: block;
+     opacity: 0.7;
+ }
+
+ .info-value {
+     font-size: 14px;
+     color: var(--text-bright);
+     font-weight: 500;
+     font-family: var(--font-ui);
+ }
+
+ /* --- NARRATIVE SECTION --- */
+ .Sak-post {
+     padding: 40px 40px 30px;
+     background-color: var(--bg-card);
+     text-align: justify;
+     font-size: 14px;
+     line-height: 1.9;
+     font-family: var(--font-body)
+ }
+
+ .Sak-post br {
+     display: block
+ }
+
+ .Sak-post strong,
+ .Sak-post b {
+     color: #ee90b5;
+     font-weight: 400
+ }
+
+ .Sak-text {
+     font-family: var(--font-body);
+     font-size: 14px;
+     line-height: 1.9;
+     color: var(--text-main);
+     margin-bottom: 20px;
+     text-align: justify;
+ }
+
+ .Sak-text.dialogue {
+     color: var(--pink-light);
+     font-style: italic;
+ }
+
+ .Sak-divider {
+     text-align: center;
+     color: var(--pink-light);
+     margin: 25px 0;
+     font-size: 12px;
+     opacity: 0.5;
+ }
+
+ /* --- Sak-footer --- */
+ .Sak-footer {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 20px 40px;
+     background-color: #0d0f14;
+     border-top: 1px solid var(--pink-dim);
+ }
+
+ .Sak-textf {
+     font-size: 12px;
+     color: var(--text-bright);
+     letter-spacing: 1px;
+ }
+
+ .Sak-textf span {
+     color: var(--text-bright);
+     border-bottom: 1px solid var(--pink-light)
+ }
+
+ .Sak-btn {
+     background: transparent;
+     color: var(--pink-light);
+     border: 1px solid var(--pink-light);
+     padding: 8px 20px;
+     font-size: 12px;
+     font-family: var(--font-ui);
+     letter-spacing: 2px;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     border-radius: 2px;
+ }
+
+ .Sak-btn:hover {
+     background: var(--pink-light);
+     color: #0a0c10;
+     box-shadow: 0 0 15px var(--pink-glow);
+ }
