@@ -1,0 +1,584 @@
+  /* ============================================================
+     THEME ROOT
+     ============================================================ */
+  :root {
+    --bg-dark:      #0a0a0a;
+    --panel-dark:   #121110;
+    --panel-light:  #1c1a18;
+    --red-deep:     #8b1e1e;
+    --red-bright:   #c0392b;
+    --gold:         #c49a45;
+    --text-main:    #f4efe6;
+    --text-muted:   #9e958b;
+    --border-color: rgba(139, 30, 30, 0.4);
+    --font-serif:   "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+    --font-sans:    "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-jp:      "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  }
+
+
+  /* ============================================================
+     MAIN POST CONTAINER
+     ============================================================ */
+  .fox-post {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    color: var(--text-main);
+    font-family: var(--font-serif);
+    background: var(--bg-dark);
+  }
+
+  /* ============================================================
+     TOP SECTION — FULL BACKGROUND IMAGE
+     ============================================================ */
+  .fox-header {
+    position: relative;
+    background-image: url('https://i.ibb.co/spjn3sFC/Ginfile1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom:-1px
+  }
+
+  .fox-header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(10,10,10,0.85) 0%, rgba(10,10,10,0) 25%, rgba(10,10,10,0) 70%, rgba(10,10,10,0.95) 100%),
+      linear-gradient(90deg, rgba(10,10,10,0.3) 0%, rgba(10,10,10,0.85) 60%, rgba(10,10,10,1) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .gin-topbar, .gin-grid {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============================================================
+     HEADER / TOP BAR
+     ============================================================ */
+  .gin-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px 32px 0;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .gin-seal {
+    display: inline-block;
+    background: var(--red-deep);
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    line-height: 1;
+  }
+
+  .ginrei-label {
+    color: var(--text-muted);
+    margin-top: 10px;
+    display: block;
+  }
+
+  /* ============================================================
+     MAIN GRID
+     ============================================================ */
+  .gin-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: center;
+    padding: 25px 0 0px;
+  }
+
+  .gin-image-spacer {
+    height: 100%;
+  }
+
+  .Gin-info-area {
+    padding: 40px 40px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+  }
+
+  .Gin-vertical-jp {
+    position: absolute;
+    top: -40px;
+    right: 20px;
+    writing-mode: vertical-rl;
+    font-family: var(--font-jp);
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    color: var(--text-muted);
+    opacity: 0.7;
+    padding: 10px;
+    border-top: 1px solid var(--red-bright);
+    border-bottom: 1px solid var(--red-bright);
+  }
+
+  .Gin-name {
+    margin: 0 0 8px;
+    font-size: 56px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    color: #fff;
+    line-height: 1;
+  }
+
+  .Gin-name span {
+    display: block;
+    font-family: var(--font-jp);
+    font-size: 20px;
+    letter-spacing: 0.4em;
+    color: var(--text-muted);
+    margin-top: 10px;
+  }
+
+  .Ginquote {
+    margin: 10px 0 32px;
+    font-size: 14px!important;
+    font-style: italic;
+    color: var(--text-muted);
+    line-height: 18px;
+    max-width: 350px;
+    border-left: 2px solid var(--red-deep);
+    padding-left: 16px;
+  }
+
+  /* --- STATS LIST --- */
+  .Ginstats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px 16px;
+    margin-top: auto;
+  }
+
+  .Gin-item .label,
+  .Gin-item2 .label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+
+  .Gin-item .value,
+  .Gin-item2 .value {
+    display: block;
+    font-size: 15px;
+    color: var(--text-main);
+    line-height: 1.3;
+  }
+
+  .Gin-item2 { grid-column: 1 / -1; }
+
+  /* ============================================================
+     TEXT POST AREA
+     ============================================================ */
+  .Gin-rp {
+    padding: 40px 32px;
+    background: var(--panel-dark);
+    border-bottom: 1px solid var(--border-color);
+    line-height: 20px;
+    font-size: 15px;
+  text-align:justify
+  }
+
+  .Gin-rp p { margin: 0 0 1.2em; }
+  .Gin-rp p:last-child { margin-bottom: 0; }
+  .Gin-rp .speech  { color: #e8b4b4; }
+  .Gin-rp .thought { color: var(--text-muted); font-style: italic; }
+  .Gin-rp .action  { color: #d4cfc7; }
+
+  /* Divider */
+  .Gindivider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 32px 0;
+    color: var(--red-deep);
+    font-size: 14px;
+    letter-spacing: 0.5em;
+  }
+  .Gindivider::before,
+  .Gindivider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--red-deep), transparent);
+  }
+
+  /* Custom Scrollbar */
+  .Gin-rp::-webkit-scrollbar { width: 6px; }
+  .Gin-rp::-webkit-scrollbar-track { background: var(--bg-dark); }
+  .Gin-rp::-webkit-scrollbar-thumb {
+    background: var(--red-deep);
+    border-radius: 99px;
+  }
+  .Gin-rp { scrollbar-width: thin; scrollbar-color: var(--red-deep) var(--bg-dark); }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .Ginfooter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 32px;
+    background: var(--panel-light);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .fox-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .rp-tag {
+    padding: 4px 12px;
+    border-radius: 2px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(0,0,0,0.3);
+    color: var(--text-main);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+  }
+
+  .fox-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 28px;
+    background: var(--red-deep);
+    color: #fff!important;
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+  }
+.fox-btn a{color:#fff!important}
+  .fox-btn:hover {
+    background: var(--red-bright);
+    transform: translateY(-1px);
+  }
+  .fox-btn::before,
+  .fox-btn::after {
+    content: "✦";
+    font-size: 8px;
+    opacity: 0.7;
+  }
+
+  /* ============================================================
+     GINREI EXTENSIONS — fox /.fox-post
+     ============================================================ */
+
+  /* ---- Root + ornaments ---- */
+  .fox-post {
+    /* NPC default */
+    --npc-rgb: 196, 154, 69;
+    --npc-soft: #d4b37a;
+    --font-ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-body: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+
+    /* ---- Background corner ornaments ---- */
+    --orn-ume: url("https://raw.githubusercontent.com/rosecodes91/KaraP/refs/heads/main/Ginrei/umeflowers1.png");
+
+    --orn-umeb: url("https://raw.githubusercontent.com/rosecodes91/KaraP/refs/heads/main/Ginrei/umeflowersbottom.png");
+
+    /* ---- Voice box left-edge tiles ---- */
+    --voice-edge-leaf: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='44' viewBox='0 0 18 44'%3E%3Cg fill='%23ffffff'%3E%3Cpath d='M9 2 L10 6.5 L15 5 L12.5 9 L16 13 L11 12 L11.5 16 L9 13.5 L6.5 16 L7 12 L2 13 L5.5 9 L3 5 L8 6.5 Z'/%3E%3Cpath d='M9 24 L10 28.5 L15 27 L12.5 31 L16 35 L11 34 L11.5 38 L9 35.5 L6.5 38 L7 34 L2 35 L5.5 31 L3 27 L8 28.5 Z'/%3E%3C/g%3E%3C/svg%3E");
+	
+    --voice-edge-paw: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='44' viewBox='0 0 18 44'%3E%3Cg fill='%23ffffff'%3E%3Cellipse cx='9' cy='10' rx='3.5' ry='2.6'/%3E%3Cellipse cx='4' cy='6' rx='1.5' ry='1.7'/%3E%3Cellipse cx='14' cy='6' rx='1.5' ry='1.7'/%3E%3Cellipse cx='6.5' cy='3' rx='1.3' ry='1.5'/%3E%3Cellipse cx='11.5' cy='3' rx='1.3' ry='1.5'/%3E%3Cellipse cx='9' cy='32' rx='3.5' ry='2.6'/%3E%3Cellipse cx='4' cy='28' rx='1.5' ry='1.7'/%3E%3Cellipse cx='14' cy='28' rx='1.5' ry='1.7'/%3E%3Cellipse cx='6.5' cy='25' rx='1.3' ry='1.5'/%3E%3Cellipse cx='11.5' cy='25' rx='1.3' ry='1.5'/%3E%3C/g%3E%3C/svg%3E");
+
+    /* ---- Separator marks ---- */
+    --mark-fox: url("https://raw.githubusercontent.com/rosecodes91/KaraP/refs/heads/main/Ginrei/GinSeparator1.png");
+    --mark-hairpin: url("https://raw.githubusercontent.com/rosecodes91/KaraP/refs/heads/main/Ginrei/GinSeparator2.png");
+    --mark-lantern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c49a45' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 3 L14 3'/%3E%3Cpath d='M12 3 L12 5'/%3E%3Cpath d='M7 5 L7 17'/%3E%3Cpath d='M17 5 L17 17'/%3E%3Cpath d='M7 5 Q12 3 17 5'/%3E%3Cpath d='M7 17 Q12 19 17 17'/%3E%3Cpath d='M7 9 Q12 8 17 9'/%3E%3Cpath d='M7 13 Q12 12 17 13'/%3E%3Cpath d='M12 17 L12 21'/%3E%3C/svg%3E");
+    --mark-bell: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23c49a45' stroke-width='1.3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 L12 5'/%3E%3Cpath d='M6 16 C6 11 8 6 12 6 C16 6 18 11 18 16 Z'/%3E%3Cpath d='M4 16 L20 16'/%3E%3Cpath d='M10 18 L12 21 L14 18'/%3E%3C/svg%3E");
+
+    /* ---- Symbol library ---- */
+    --sym-fox: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 4 L8 11 L5 10 Z'/%3E%3Cpath d='M18 4 L16 11 L19 10 Z'/%3E%3Cpath d='M12 5 C7 5 5 9 5 13 C5 17 8 20 12 20 C16 20 19 17 19 13 C19 9 17 5 12 5 Z'/%3E%3Cpath d='M9 12 L11 13 L10 14 Z'/%3E%3Cpath d='M15 12 L13 13 L14 14 Z'/%3E%3C/svg%3E");
+    --sym-torii: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.6' stroke-linecap='round'%3E%3Cpath d='M3 6 L21 6'/%3E%3Cpath d='M5 9 L19 9'/%3E%3Cpath d='M8 9 L8 20'/%3E%3Cpath d='M16 9 L16 20'/%3E%3C/svg%3E");
+    --sym-lantern: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10 3 L14 3'/%3E%3Cpath d='M12 3 L12 5'/%3E%3Cpath d='M7 5 L7 17'/%3E%3Cpath d='M17 5 L17 17'/%3E%3Cpath d='M7 5 Q12 3 17 5'/%3E%3Cpath d='M7 17 Q12 19 17 17'/%3E%3Cpath d='M7 9 Q12 8 17 9'/%3E%3Cpath d='M7 13 Q12 12 17 13'/%3E%3C/svg%3E");
+    --sym-bell: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 3 L12 5'/%3E%3Cpath d='M6 16 C6 11 8 6 12 6 C16 6 18 11 18 16 Z'/%3E%3Cpath d='M4 16 L20 16'/%3E%3Cpath d='M10 18 L12 21 L14 18'/%3E%3C/svg%3E");
+    --sym-paw: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fff'%3E%3Cellipse cx='12' cy='16' rx='4' ry='3'/%3E%3Cellipse cx='7' cy='11' rx='2' ry='2.5'/%3E%3Cellipse cx='17' cy='11' rx='2' ry='2.5'/%3E%3Cellipse cx='9' cy='6' rx='1.8' ry='2.3'/%3E%3Cellipse cx='15' cy='6' rx='1.8' ry='2.3'/%3E%3C/svg%3E");
+    --sym-sakura: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='1.4' stroke-linejoin='round'%3E%3Cpath d='M12 12 C9 8 7 6 9 4 C11 3 12 6 12 8 C12 6 13 3 15 4 C17 6 15 8 12 12 Z'/%3E%3Cpath d='M12 12 C8 9 6 7 4 9 C3 11 6 12 8 12 C6 12 3 13 4 15 C6 17 8 15 12 12 Z'/%3E%3Cpath d='M12 12 C8 15 6 17 8 19 C10 20 12 17 12 15 C12 17 14 20 16 19 C18 17 16 15 12 12 Z'/%3E%3Cpath d='M12 12 C15 9 17 7 19 9 C20 11 17 12 15 12 C17 12 20 13 19 15 C17 17 15 15 12 12 Z'/%3E%3C/svg%3E");
+  }
+
+  /* ---- Corner ornaments on the prose area ---- */
+  .fox-post .Gin-rp {
+    background-image:
+      var(--orn-ume),
+      var(--orn-umeb);
+    background-repeat: no-repeat, no-repeat;
+    background-position: left -152px top -27px, right -6px bottom -1px;
+    background-size: 500px auto, 700px auto;
+  }
+
+  /* ---- Inline NPC chip ---- */
+  .fox-post .fox-npc {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    vertical-align: middle;
+    margin: 0 4px;
+    padding: 3px 14px 3px 3px;
+    border: 1px solid rgba(var(--npc-rgb), .45);
+    border-radius: 999px;
+    background:
+      radial-gradient(120% 200% at 25% 15%, rgba(255, 255, 255, .14), transparent 55%),
+      linear-gradient(180deg,
+        rgba(var(--npc-rgb), .26),
+        rgba(var(--npc-rgb), .08));
+    box-shadow:
+      inset 0 0 10px rgba(var(--npc-rgb), .20),
+      0 0 12px rgba(var(--npc-rgb), .22);
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    line-height: 1;
+    color: #fff;
+    white-space: nowrap;
+  }
+
+  .fox-post .fox-npc__symbol {
+    display: block;
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    background-color: rgb(var(--npc-rgb));
+    -webkit-mask-image: var(--npc-symbol, var(--sym-fox));
+    -webkit-mask-size: 82% 82%;
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+            mask-image: var(--npc-symbol, var(--sym-fox));
+            mask-size: 82% 82%;
+            mask-position: center;
+            mask-repeat: no-repeat;
+    box-shadow: 0 0 10px rgba(var(--npc-rgb), .40);
+  }
+
+  .fox-post .fox-npc__pic {
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgba(var(--npc-rgb), .60);
+    box-shadow: 0 0 12px rgba(var(--npc-rgb), .40);
+  }
+
+  /* Symbol swap classes */
+  .fox-post .fox-npc--sym-fox     { --npc-symbol: var(--sym-fox); }
+  .fox-post .fox-npc--sym-torii   { --npc-symbol: var(--sym-torii); }
+  .fox-post .fox-npc--sym-lantern { --npc-symbol: var(--sym-lantern); }
+  .fox-post .fox-npc--sym-bell    { --npc-symbol: var(--sym-bell); }
+  .fox-post .fox-npc--sym-paw     { --npc-symbol: var(--sym-paw); }
+  .fox-post .fox-npc--sym-sakura  { --npc-symbol: var(--sym-sakura); }
+
+  /* ---- Block voice — fade to black on right, leaves/paws on left ---- */
+  .fox-post .rp-voice {
+    --voice-edge: var(--voice-edge-leaf);
+    --voice-edge-size: 18px 44px;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 16px;
+    align-items: start;
+    margin: -15px 0;
+    padding: 16px 24px 16px 26px;
+    border-radius: 0 8px 8px 0;
+    border-left: 2px solid rgb(var(--npc-rgb));
+    background-color: transparent;
+    background-image:
+      linear-gradient(90deg,
+        rgba(var(--npc-rgb), .14) 0%,
+        rgba(var(--npc-rgb), .06) 38%,
+        rgba(var(--npc-rgb), .02) 68%,
+        rgba(10, 10, 10, 0)    100%);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    overflow: hidden;
+  }
+
+  @supports ((-webkit-mask-image: url("")) or (mask-image: url(""))) {
+    .fox-post .rp-voice {
+      border-left: 0;
+      padding-left: 30px;
+    }
+    .fox-post .rp-voice::before {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      width: 18px;
+      background: linear-gradient(180deg,
+        rgb(var(--npc-rgb)),
+        rgba(var(--npc-rgb), .35));
+      -webkit-mask-image: var(--voice-edge);
+      -webkit-mask-size: var(--voice-edge-size);
+      -webkit-mask-repeat: repeat-y;
+              mask-image: var(--voice-edge);
+              mask-size: var(--voice-edge-size);
+              mask-repeat: repeat-y;
+      opacity: .9;
+      pointer-events: none;
+    }
+  }
+
+  /* Edge variants — add to the .rp-voice element */
+  .fox-post .rp-voice--leaf   { --voice-edge: var(--voice-edge-leaf); }
+  .fox-post .rp-voice--paw    { --voice-edge: var(--voice-edge-paw);  }
+  .fox-post .rp-voice--sparse { --voice-edge-size: 18px 88px; }
+
+  .fox-post .rp-voice__pic {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    align-self: start;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(var(--npc-rgb), .55);
+    box-shadow:
+      0 0 0 3px rgba(var(--npc-rgb), .10),
+      0 0 20px rgba(var(--npc-rgb), .40);
+  }
+
+  .fox-post .rp-voice__body { grid-column: 2; min-width: 0; }
+
+  .fox-post .rp-voice > .rp-voice__name,
+  .fox-post .rp-voice > .rp-voice__line { grid-column: 2; }
+
+  .fox-post .rp-voice__name {
+    display: block;
+    margin-bottom: 5px;
+    font-family: var(--font-ui);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--npc-soft);
+  }
+
+  .fox-post .rp-voice__line {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--npc-soft);
+    text-align: left;
+    opacity: .95;
+  }
+
+  .fox-post .rp-voice + .rp-voice { margin-top: 12px; }
+
+  /* ---- Separator ---- */
+  .fox-post .rp-sep {
+    --gap: 50px;
+    --mark-size: 60px;
+    --mark: var(--mark-fox);
+
+    height: var(--mark-size);
+    margin: 2px 0;
+    background-image:
+      linear-gradient(90deg, transparent, rgba(139, 30, 30, .55) 55%, rgba(196, 154, 69, .40)),
+      var(--mark),
+      linear-gradient(270deg, transparent, rgba(139, 30, 30, .55) 55%, rgba(196, 154, 69, .40));
+    background-position: left center, center center, right center;
+    background-size:
+      calc(50% - var(--gap)) 1px,
+      var(--mark-size) var(--mark-size),
+      calc(50% - var(--gap)) 1px;
+    background-repeat: no-repeat;
+  }
+
+  .fox-post .rp-sep--fox     { --mark: var(--mark-fox); }
+  .fox-post .rp-sep--torii   { --mark: var(--mark-hairpin); }
+  .fox-post .rp-sep--lantern { --mark: var(--mark-lantern); }
+  .fox-post .rp-sep--bell    { --mark: var(--mark-bell); }
+
+  /* ---- NPC color presets ---- */
+  .fox-post .fox-npc--fox,    .fox-post .rp-voice--fox    { --npc-rgb: 200, 60, 50;   --npc-soft: #e08078; }
+  .fox-post .fox-npc--gold,   .fox-post .rp-voice--gold   { --npc-rgb: 196, 154, 69;  --npc-soft: #d4b37a; }
+  .fox-post .fox-npc--snow,   .fox-post .rp-voice--snow   { --npc-rgb: 220, 220, 228; --npc-soft: #f0eef2; }
+  .fox-post .fox-npc--shrine, .fox-post .rp-voice--shrine { --npc-rgb: 170, 40, 40;   --npc-soft: #cf7a7a; }
+  .fox-post .fox-npc--ink,    .fox-post .rp-voice--ink    { --npc-rgb: 120, 140, 180; --npc-soft: #a8b8d4; }
+  .fox-post .fox-npc--ash,    .fox-post .rp-voice--ash    { --npc-rgb: 150, 145, 140; --npc-soft: #b8b2ac; }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width: 800px) {
+    .fox-header {
+      background-position: center center;
+    }
+    .gin-grid {
+      grid-template-columns: 1fr;
+      padding: 40px 0 60px;
+    }
+    .gin-image-spacer {
+      display: none;
+    }
+    .Gin-info-area {
+      padding: 0 30px;
+      text-align: center;
+    }
+    .Gin-name { font-size: 42px; }
+    .Ginquote {
+      margin: 20px auto 30px;
+      border-left: none;
+      border-top: 2px solid var(--red-deep);
+      border-bottom: 2px solid var(--red-deep);
+      padding: 16px 0;
+    }
+    .Ginstats {
+      justify-content: center;
+      text-align: center;
+    }
+    .Gin-vertical-jp {
+      position: relative;
+      top: auto;
+      right: auto;
+      writing-mode: horizontal-tb;
+      margin-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .fox-post .rp-voice { grid-template-columns: 1fr; gap: 10px; padding: 14px 16px 14px 24px; }
+    .fox-post .rp-voice__pic { grid-row: auto; width: 46px; height: 46px; }
+    .fox-post .rp-voice__body,
+    .fox-post .rp-voice > .rp-voice__name,
+    .fox-post .rp-voice > .rp-voice__line { grid-column: 1; }
+    .fox-post .Gin-rp {
+      background-size: 56px auto, 56px auto;
+      background-position: right 10px top 10px, left 10px bottom 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .gin-topbar { padding: 16px; flex-direction: column; gap: 10px; }
+    .gin-seal { align-self: flex-start; }
+    .Gin-rp { padding: 24px 16px; font-size: 15px; }
+    .Ginfooter { flex-direction: column; gap: 16px; text-align: center; }
+    .Ginstats { grid-template-columns: 1fr; }
+  }
