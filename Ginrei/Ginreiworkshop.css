@@ -1,0 +1,130 @@
+  .gr-head,
+  .gr-head *,
+  .gr-head *::before,
+  .gr-head *::after { box-sizing: border-box; }
+.Gwork{background-image:url(https://raw.githubusercontent.com/rosecodes91/KaraP/refs/heads/main/Ginrei/Workshop.png);
+      width: 720px;
+      height:250px;
+      margin:0 auto;
+      box-sizing: border-box; 
+      }
+  :root{--gr-white: #ffffff;
+    --gr-soft:  #918b82;
+    --gr-faint: #bfaeaf;
+    --gr-line:  #3a3a41;
+    --gr-seal:  #ab3f2c;
+    --gr-open:  #6f9b72;
+    --gr-wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%236b6b6c' stroke-width='0.6' stroke-opacity='0.18'%3E%3Ccircle cx='0' cy='0' r='40'/%3E%3Ccircle cx='0' cy='0' r='27'/%3E%3Ccircle cx='0' cy='0' r='14'/%3E%3Ccircle cx='80' cy='0' r='40'/%3E%3Ccircle cx='80' cy='0' r='27'/%3E%3Ccircle cx='80' cy='0' r='14'/%3E%3Ccircle cx='0' cy='80' r='40'/%3E%3Ccircle cx='0' cy='80' r='27'/%3E%3Ccircle cx='0' cy='80' r='14'/%3E%3Ccircle cx='80' cy='80' r='40'/%3E%3Ccircle cx='80' cy='80' r='27'/%3E%3Ccircle cx='80' cy='80' r='14'/%3E%3Ccircle cx='40' cy='40' r='40'/%3E%3Ccircle cx='40' cy='40' r='27'/%3E%3Ccircle cx='40' cy='40' r='14'/%3E%3C/g%3E%3C/svg%3E");}
+  .gr-head {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.9rem 1.05rem;
+    width: 720px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+    line-height: 1.4;
+    color: var(--gr-ink);
+    background-color: rgba(255, 255, 255, 0.02);
+    background-image: var(--gr-wave);
+    background-size: 4.5em 4.5em;
+    background-position: center;
+    background-repeat: repeat;
+    border-bottom: 1px solid var(--gr-line);
+    border-radius: 2px;
+  }
+  .gr-head p { margin: 0; }
+  .gr-seal {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    flex: none;
+    background: var(--gr-seal);
+    color: #f7f2e7;
+    font-size: 17px;
+    line-height: 1;
+    border-radius: 2px;
+    transform: rotate(-3deg);
+    user-select: none;
+  }
+
+  .gr-head__jp {
+    font-size: 1.15rem;
+    letter-spacing: 0.34em;
+    text-indent: 0.34em;
+    line-height: 1.2;
+    color:var(--gr-white);
+  }
+
+  .gr-head__en {
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gr-soft);
+  }
+
+  /* ── hairline divider ── */
+  .gr-head__div {
+    width: 1px;
+    align-self: stretch;
+    min-height: 34px;
+    background: var(--gr-line);
+  }
+
+  /* ── role ── */
+  .gr-head__role p:first-child {
+    font-size: 0.66rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gr-soft);
+  }
+
+  .gr-head__role p:last-child {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    color: var(--gr-faint);
+  }
+
+  /* ── status, pushed to the right ── */
+  .gr-head__status {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: var(--gr-soft);
+  }
+
+  .gr-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gr-open);
+    box-shadow: 0 0 6px rgba(111, 155, 114, 0.6);
+  }
+  .gr-content{
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.9rem 1.05rem;
+    width: 720px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    font-family: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+    text-align:justify;
+    line-height: 1.4;
+    color: var(--gr-white);
+    background-color: rgba(0, 0, 0, 0.02);
+    background-image: var(--gr-wave);
+    background-size: 4.5em 4.5em;
+    background-position: center;
+    background-repeat: repeat;
+    border-radius: 2px;
+    box-sizing: border-box; 
+  border-bottom: 1px solid var(--gr-line);}
