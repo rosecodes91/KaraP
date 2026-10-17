@@ -1,0 +1,550 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+
+/* Base Wrapper & Variables */
+.saeko-wrapper {
+    /* Scoped Variables to prevent forum breakage */
+    --main-image: url('https://raw.githubusercontent.com/rosecodes91/KaraP/refs/heads/main/Saeko/SaeDiary.png');
+    --bg-dark: #050505;
+    --bg-mid: #0a0707;
+    --bg-light: #161010;
+    --accent-red: #8b1a1a;
+    --accent-red-bright: #f1676c;
+    --text-main: #cdc4be;
+    --text-bright: #f3f4f3;
+    --text-muted: #8a7b75;
+    --border-color: #241413;
+    --nav-text: #fbf3f1;
+--light-pink: #feb4b8;
+    position: relative;
+    width: 100%;
+    max-width: 740px;
+    height: 800px;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    font-family: 'Lora', serif;
+    color: var(--text-main);
+    background: var(--bg-dark);
+    box-sizing: border-box;
+}
+
+/* Hide Checkboxes and Radio Buttons */
+.saeko-wrapper input[type="checkbox"],
+.saeko-wrapper input[type="radio"] {
+    display: none;
+}
+
+/* --- THE BIG IMAGE / BASE --- */
+.saeko-hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--main-image);
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 30px;
+    box-sizing: border-box;
+    transition: all 0.6s ease;
+    z-index: 1;
+}
+
+/* Gradient overlay changed to BLACK */
+.saeko-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.4) 40%, rgba(5, 5, 5, 0.8) 100%);
+    z-index: 2;
+}
+
+/* Text Overlay */
+.sae-overlay {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.saeko-ornament {
+    color: var(--accent-red-bright);
+    font-size: 16px;
+    letter-spacing: 10px;
+    margin: 10px 0;
+    text-shadow: 0 0 15px rgba(192, 57, 43, 0.9);
+}
+
+.saeko-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--accent-red-bright);
+    text-shadow: 0 0 25px rgba(5, 5, 5, 1), 0 0 15px rgba(192, 57, 43, 0.6);
+    margin: 0;
+    letter-spacing: 4px;
+    line-height: 1.1;
+}
+
+.saeko-subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    color: var(--text-muted);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin: 15px 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+}
+
+.saeko-quote {
+    font-style: italic;
+    font-size: 15px;
+    color: var(--text-main);
+    max-width: 80%;
+    margin: 0 auto;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9);
+    line-height: 1.6;
+}
+
+/* The "Open" Button */
+.SaeOpen-btn {
+    position: absolute;
+    bottom: 40px;
+    background: rgba(192, 57, 43, 0.15);
+    border: 1px solid var(--accent-red-bright);
+    color: var(--accent-red-bright);
+    padding: 14px 35px;
+    border-radius: 30px;
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    letter-spacing: 3px;
+    cursor: pointer;
+    z-index: 4;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(192, 57, 43, 0.2);
+}
+
+.SaeOpen-btn:hover {
+    background: var(--accent-red-bright);
+    color: var(--bg-dark);
+    box-shadow: 0 0 30px rgba(192, 57, 43, 0.8);
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* --- SLIDE UP SaepaneL LOGIC --- */
+#toggle-saeko:checked~.saeko-hero .SaeOpen-btn {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+}
+
+.Saedossier-Saepanel {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 65%;
+    background: var(--bg-dark);
+    transform: translateY(100%);
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 10;
+    border-top: 2px solid rgba(192, 57, 43, 0.4);
+    box-shadow: 0 -15px 50px rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+}
+
+#toggle-saeko:checked~.Saedossier-Saepanel {
+    transform: translateY(0);
+}
+
+.Saeclose-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--accent-red-bright);
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.3s ease;
+    font-family: sans-serif;
+    line-height: 1;
+    text-shadow: 0 0 10px rgba(192, 57, 43, 0.5);
+}
+
+.Saeclose-btn:hover {
+    color: #fff;
+    text-shadow: 0 0 20px var(--accent-red-bright), 0 0 10px #fff;
+    transform: scale(1.2) rotate(90deg);
+}
+
+/* --- TAB NAVIGATION --- */
+.saeko-nav {
+    display: flex;
+    justify-content: center;
+    background-color: var(--bg-mid);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 40px 0 20px;
+    position: sticky;
+    top: 0;
+    z-index: 15;
+}
+
+.Saenav-btn {
+    flex: 1;
+    text-align: center;
+    padding: 15px 5px;
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 1px;
+    color: var(--nav-text);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+}
+
+.Saenav-btn:hover {
+    color: var(--accent-red-bright);
+    background-color: rgba(192, 57, 43, 0.05);
+}
+
+#tab-saeko-diary:checked~.saeko-nav label[for="tab-saeko-diary"],
+#tab-saeko-chronology:checked~.saeko-nav label[for="tab-saeko-chronology"],
+#tab-saeko-relationships:checked~.saeko-nav label[for="tab-saeko-relationships"],
+#tab-saeko-trivia:checked~.saeko-nav label[for="tab-saeko-trivia"] {
+    color: var(--accent-red-bright);
+    border-bottom: 2px solid var(--accent-red-bright);
+    background-color: rgba(192, 57, 43, 0.1);
+    text-shadow: 0 0 10px rgba(192, 57, 43, 0.6);
+}
+
+/* --- CONTENT SaepaneS --- */
+.saeko-content {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 25px 35px;
+    background-image: url(https://raw.githubusercontent.com/rosecodes91/KaraP/refs/heads/main/Saeko/SaeDiarybackground.png);
+}
+
+.saeko-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.saeko-content::-webkit-scrollbar-track {
+    background: var(--bg-mid);
+}
+
+.saeko-content::-webkit-scrollbar-thumb {
+    background: var(--accent-red);
+    border-radius: 4px;
+}
+
+.saeko-content::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-red-bright);
+}
+
+.Saepane {
+    display: none;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#tab-saeko-diary:checked~.saeko-content .Saepane-diary,
+#tab-saeko-chronology:checked~.saeko-content .Saepane-chronology,
+#tab-saeko-relationships:checked~.saeko-content .Saepane-relationships,
+#tab-saeko-trivia:checked~.saeko-content .Saepane-trivia {
+    display: block;
+}
+
+.SaeSectitle {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    color: var(--accent-red-bright);
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(192, 57, 43, 0.3);
+    padding-bottom: 10px;
+}
+
+/* --- DIARY --- */
+.SaeEntry {
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.92);
+    padding: 15px;
+    border-left: 3px solid var(--accent-red);
+    border-right: 1px solid var(--border-color);
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 0 2px 2px 0;
+    transition: all 0.3s ease;
+}
+
+.SaeEntry:hover {
+transition: all 0.3s ease;  
+    border-left-color: var(--accent-red-bright);
+
+}
+
+.SaeEntry .date {
+    display: block;
+    font-family: 'Cinzel', serif;
+    color: var(--light-pink);
+    font-size: 13px;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.SaeEntry p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: justify;
+    color: var(--text-bright);
+}
+
+/* --- CHRONOLOGY --- */
+.Saetimeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.Saetimeline li {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    /* Black background */
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.Saetimeline li:hover {
+    border-color: rgba(192, 57, 43, 0.4);
+    box-shadow: 0 0 15px rgba(192, 57, 43, 0.1);
+}
+
+.Sae-timedate {
+    flex: 0 0 100px;
+    font-family: 'Cinzel', serif;
+    color: var(--accent-red-bright);
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-align: right;
+    border-right: 1px solid rgba(192, 57, 43, 0.2);
+    padding-right: 15px;
+}
+
+.Sae-timetext {
+    flex: 1;
+}
+
+.Saetopic-link {
+    color: var(--text-bright) !important;
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    text-decoration: none;
+    border-bottom: 3px double rgba(192, 57, 43, 0.5);
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.Saetopic-link:hover {
+    color: #cba6a8;
+    border-bottom-color: #cba6a8;
+    text-shadow: 0 0 10px var(--accent-red-bright);
+}
+
+.Saetime-m {
+    font-size: 13px;
+    color: var(--text-muted);
+    display: flex;
+    gap: 15px;
+    font-family: 'Lora', serif;
+    flex-wrap: wrap;
+}
+
+span.participants{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--text-bright);
+}
+
+span.status{color:var(--accent-red-bright)!important}
+
+/* --- RELATIONSHIPS --- */
+.Saerel-item {
+    display: flex;
+    margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    /* Changed from blue to black */
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.Saerel-item:hover {
+    border-color: rgba(192, 57, 43, 0.4);
+    box-shadow: 0 0 15px rgba(192, 57, 43, 0.1);
+}
+
+.Saerel-avatar {
+    flex: 0 0 80px;
+    background: var(--bg-mid);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.Saerel-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%) contrast(1.1);
+    transition: all 0.3s ease;
+}
+
+.Saerel-item:hover .Saerel-avatar img {
+    filter: grayscale(0%) contrast(1);
+}
+
+.Saerel-info {
+    flex: 1;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Saerel-name {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    color: var(--text-bright);
+    margin-bottom: 5px;
+    text-shadow: 0 0 10px rgba(192, 57, 43, 0.3);
+}
+
+.Saerel-meta {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    font-family: 'Lora', serif;
+    flex-wrap: wrap;
+}
+
+.Saerel-meta span {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(192, 57, 43, 0.05);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(192, 57, 43, 0.1);
+}
+
+.Saerel-type {
+    color: var(--accent-red-bright);
+}
+
+.Saerel-trust {
+    color: var(--text-muted);
+}
+
+.Saerel-desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin: 0;
+}
+
+/* --- TRIVIA (Elegant Ornaments) --- */
+.Saetrivia-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.Saetrivia-list li {
+    position: relative;
+    padding: 15px 15px 15px 45px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-main);
+    background: linear-gradient(90deg, rgba(5, 5, 5, 0.85) 0%, rgba(5, 5, 5, 0.4) 40%, rgba(5, 5, 5, 0.8) 100%);
+    border-left: 3px solid var(--accent-red);
+    border-radius: 0 8px 8px 0;
+    transition: all 0.3s ease;
+    
+}
+
+.Saetrivia-list li:hover {
+    background: rgba(192, 57, 43, 0.05);
+    border-left-color: var(--accent-red-bright);
+    transform: translateX(3px);
+}
+
+.Saetrivia-list li::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-red-bright);
+    transform: translateY(-50%) rotate(45deg);
+    box-shadow: 0 0 10px rgba(192, 57, 43, 0.8);
+    transition: all 0.3s ease;
+}
+
+.Saetrivia-list li:hover::before {
+    background-color: #fff;
+    box-shadow: 0 0 15px #fff;
+    transform: translateY(-50%) rotate(45deg) scale(1.2);
+}
+
+/* Global fixes inside wrapper */
+.saeko-wrapper br {
+    display: none;
+}
+
+.saeko-wrapper ul,
+.saeko-wrapper li {
+    list-style: none !important;
+    list-style-type: none !important;
+    margin-left: 10px !important;
+}
